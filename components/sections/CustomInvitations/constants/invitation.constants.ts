@@ -7,12 +7,12 @@ import { EventInfo, RelationOption } from '../types/invitation.types';
 export const ADMIN_PASSWORD = "aurora1234";
 
 export const EVENT_INFO: EventInfo = {
-  quinceaneraName: "Frida",
-  date: "Sábado 27 de Septiembre 2025",
+  quinceaneraName: "Susan & Cuau",
+  date: "Sábado 20 de Diciembre 2025",
   time: "6:00 PM",
   venue: "Eventos Casablanca",
-  dressCode: "Formal -Rosa solo la quinceañera-",
-  invitationUrl: "https://quince-vip-aileen-dayana.vercel.app/"
+  dressCode: "Formal -Blanco solo la novia-",
+  invitationUrl: "https://boda-vip-susan-cuau.vercel.app/"
 } as const;
 
 export const SUGGESTED_MESSAGES = [
