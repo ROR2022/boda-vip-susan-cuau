@@ -288,7 +288,7 @@ const QRCode = () => {
           className="mt-6 text-sm italic"
           style={{ color: VIP_COLORS.lavandaIntensa, opacity: 0.8 }}
         >
-          &quot;Comparte momentos únicos en mi día especial&quot;
+          &quot;Comparte momentos únicos en este día especial&quot;
         </p>
       </div>
 
