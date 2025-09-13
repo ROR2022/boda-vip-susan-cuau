@@ -21,7 +21,7 @@ export default function WelcomeMessage({ onContinue }) {
     <div 
     style={{
       //background: 'linear-gradient(135deg, #f7e6e6, #e3aaaa)',
-         backgroundImage: `url('/images/boda3.png')`,
+         backgroundImage: `url('/images/orquideas1.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat', 
@@ -58,7 +58,7 @@ export default function WelcomeMessage({ onContinue }) {
           {/* Main message */}
           <div className="space-y-6 mb-8 font-bold">
             <p className="text-xl leading-relaxed">
-              Después de vivir grandes experiencias juntos, decidimos ser más felices.
+              A veces se hacen locuras por amor... asi como esta...
             </p>
 
             <p className="text-lg leading-relaxed">
@@ -71,7 +71,7 @@ export default function WelcomeMessage({ onContinue }) {
           <button
           style={{ letterSpacing: '1px' }}
             onClick={handleContinue}
-            className="bg-emerald-500 bg-opacity-95 text-pink-950 px-8 py-3 rounded-full font-bold hover:bg-emerald-600 transition-colors duration-300 shadow-lg"
+            className="bg-emerald-200 bg-opacity-95 text-slate-400 px-8 py-3 rounded-full font-bold hover:bg-emerald-600 transition-colors duration-300 shadow-lg"
           >
             Continuar
           </button>

@@ -35,7 +35,7 @@ export default function ParentsSection() {
   return (
     <section 
     style={{
-      background: "url('/images/boda1SinFondo.png')",
+      background: "url('/images/orquideas2.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundAttachment: "scroll",

@@ -99,7 +99,7 @@ export default function DressCodeSection() {
       id="dresscode"
       className="py-20"
       style={{
-         background: "url('/images/boda1SinFondo.png')",
+         background: "url('/images/orquideas2.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',  
@@ -157,9 +157,17 @@ export default function DressCodeSection() {
           </div>
 
           <h3 className="text-3xl font-bold text-foreground">
-            {dressCode.type}
+            Semi-Formal
           </h3>
-          <p className="text-lg text-muted-foreground">{dressCode.note}</p>
+          <Image
+            src="/images/dresscode1.jpg"
+            alt="Código de Vestimenta"
+            width={600}
+            height={400}
+            className="mx-auto rounded-lg shadow-lg"
+          />
+          <p className="text-xl text-foreground">Sugerencia de gama de color</p>
+          <p className="text-sm text-muted-foreground">Se reserva el color blanco y negro</p>
 
           <Card 
           style={{ display: 'none'}}

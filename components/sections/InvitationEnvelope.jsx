@@ -207,7 +207,7 @@ export default function EnvelopeOpening({ onOpen = () => {} }) {
                 }}
               >
                 {/* <FaUserGraduate className="text-4xl text-amber-900/90" /> */}
-                <h3 className="text-2xl text-orange-800">S & C</h3>
+                <h3 className="text-2xl font-main-text text-orange-800">S & C</h3>
                 
                 {/* Embossed highlight effect */}
                 <div 

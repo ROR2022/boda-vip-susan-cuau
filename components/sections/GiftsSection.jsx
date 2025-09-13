@@ -48,7 +48,7 @@ export default function GiftsSection() {
     <section
       ref={sectionRef}
       style={{
-        background: "url('/images/boda1SinFondo.png')",
+        background: "url('/images/orquideas2.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',  

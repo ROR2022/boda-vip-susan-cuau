@@ -1,6 +1,6 @@
 // ⛪ CeremonySection - Sección de información de la ceremonia
 
-import React, {useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { MapPin, Clock } from "lucide-react";
 import { Button } from "../ui/button";
@@ -16,30 +16,28 @@ export default function CeremonySection() {
   //const { ceremonySection } = styling;
 
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
-        const [isVisible, setIsVisible] = useState(false);
-        
-      
-        const basicClass="text-2xl font-bold text-foreground";
-        const completeClass="text-2xl font-bold text-foreground scale-up-center";
-      
-        useEffect(() => {
-          const handleScroll = () => {
-            //console.log('Scroll position:', window.scrollY);
-            setScrollPosition(window.scrollY);
-          };
-      
-          window.addEventListener('scroll', handleScroll);
-          return () => {
-            window.removeEventListener('scroll', handleScroll);
-          };
-        }, []);
-      
-        useEffect(() => {
-          if(scrollPosition >= 2300 && scrollPosition < 2900) {
-            setIsVisible(true);
-          }
-        },[scrollPosition])
-    
+  const [isVisible, setIsVisible] = useState(false);
+
+  const basicClass = "text-2xl font-bold text-foreground";
+  const completeClass = "text-2xl font-bold text-foreground scale-up-center";
+
+  useEffect(() => {
+    const handleScroll = () => {
+      //console.log('Scroll position:', window.scrollY);
+      setScrollPosition(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (scrollPosition >= 2300 && scrollPosition < 2900) {
+      setIsVisible(true);
+    }
+  }, [scrollPosition]);
 
   // Configurar animación de scroll
   const animationConfig = getAnimationConfig("ceremony");
@@ -53,10 +51,10 @@ export default function CeremonySection() {
     <section
       ref={sectionRef}
       style={{
-        background: "url('/images/boda1SinFondo.png')",
+        background: "url('/images/orquideas2.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat", 
+        backgroundRepeat: "no-repeat",
         position: "relative",
         zIndex: 5000,
         ...animationStyle,
@@ -91,7 +89,7 @@ export default function CeremonySection() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative w-full flex justify-center items-center h-96 rounded-2xl shadow-lg overflow-hidden">
               <Image
-                src="/images/boda9.jpeg"
+                src="/images/susan&cuau2.jpg"
                 alt="Ceremony Section"
                 fill
                 className="object-cover "
@@ -107,18 +105,7 @@ export default function CeremonySection() {
               className="space-y-6"
             >
               <div className="text-center">
-                <h2
-                  style={{ display: "none" }}
-                  className="font-script text-4xl text-secondary mb-4"
-                >
-                  ITINERARIO
-                </h2>
-                <h3
-                  style={{ display: "none" }}
-                  className="font-script text-5xl text-foreground mb-6"
-                >
-                  {ceremony.type}
-                </h3>
+                
 
                 <div
                   style={{
@@ -127,11 +114,11 @@ export default function CeremonySection() {
                   }}
                   className="space-y-4"
                 >
-                   <div className="text-4xl text-secondary font-script mb-4">
-            Ceremonia y Recepción
-          </div>
+                  <div className="text-4xl text-secondary font-script mb-4">
+                    Ceremonia
+                  </div>
                   <h4 className={isVisible ? completeClass : basicClass}>
-                    {ceremony.name}
+                    Capilla Inmaculado Corazón de María
                   </h4>
                   <div className="flex items-center justify-center gap-2">
                     <Clock className="w-6 h-6 text-primary" />
@@ -139,14 +126,47 @@ export default function CeremonySection() {
                       {ceremony.time}
                     </span>
                   </div>
-                  <p className="text-muted-foreground">{ceremony.address}</p>
+                  <p className="text-muted-foreground">Emiliano Zapata, Las Lomitas, 99700 Tlaltenango de Sánchez Román, Zac.</p>
 
                   <Button
                     style={{
                       position: "relative",
                       zIndex: 5000, // Asegurar que el botón esté por encima de otros elementos
                     }}
-                    onClick={() => window.open(ceremony.ubiLink, "_blank")}
+                    onClick={() => window.open("https://maps.app.goo.gl/3gJF6kYFdzayxfr16", "_blank")}
+                    className="bg-slate-800 hover:text-black hover:bg-slate-400 text-white rounded-full px-8 py-3"
+                  >
+                    <MapPin className="w-4 h-4 mr-2" />
+                    Ir al mapa
+                  </Button>
+                </div>
+                <div
+                  style={{
+                    position: "relative",
+                    zIndex: 4000,
+                  }}
+                  className="space-y-4 mt-6"
+                >
+                  <div className="text-4xl text-secondary font-script mb-4">
+                    Recepción
+                  </div>
+                  <h4 className={isVisible ? completeClass : basicClass}>
+                    El Lunario
+                  </h4>
+                  <div className="flex items-center justify-center gap-2">
+                    <Clock className="w-6 h-6 text-primary" />
+                    <span className="text-2xl font-medium">
+                      7:30 PM
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground">QM7W+8X7 Caxcanes, Zacatecas</p>
+
+                  <Button
+                    style={{
+                      position: "relative",
+                      zIndex: 5000, // Asegurar que el botón esté por encima de otros elementos
+                    }}
+                    onClick={() => window.open("https://maps.app.goo.gl/C4UmvUP2warKxcSQ9", "_blank")}
                     className="bg-slate-800 hover:text-black hover:bg-slate-400 text-white rounded-full px-8 py-3"
                   >
                     <MapPin className="w-4 h-4 mr-2" />

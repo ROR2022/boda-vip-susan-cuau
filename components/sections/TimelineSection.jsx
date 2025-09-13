@@ -49,7 +49,7 @@ export default function TimelineSection() {
     <section
       ref={sectionRef}
       style={{
-         background: "url('/images/boda1SinFondo.png')",
+         background: "url('/images/orquideas2.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',  
@@ -92,7 +92,7 @@ export default function TimelineSection() {
                   className={isVisible ? completeClass : basicClass}
                 >
                   <Image
-                    src="/images/boda10.jpeg"
+                    src="/images/susan&cuau3.jpg"
                     alt="Timeline Section"
                     fill
                     className="object-cover"
@@ -148,7 +148,7 @@ export default function TimelineSection() {
               }}
               className=" text-center mt-8 p-6 bg-slate-300 bg-opacity-60 rounded-lg">
                 <p className="text-lg italic text-muted-foreground">
-                  &ldquo;{messages.timelineQuote}&rdquo;
+                  Ven a celebrar con nosotros y hagamos de este día algo inolvidable!!
                 </p>
               </div>
             </div>

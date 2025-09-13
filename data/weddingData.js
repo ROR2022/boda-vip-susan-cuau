@@ -25,10 +25,10 @@ export const weddingData = {
 
   // 📅 Información de fecha y evento
   wedding: {
-    date: "2025-12-20T18:00:00",
-    dayName: "SABADO",
-    day: "20",
-    month: "DICIEMBRE",
+    date: "2025-11-07T18:00:00",
+    dayName: "VIERNES",
+    day: "07",
+    month: "NOVIEMBRE",
     year: "2025",
     title: "Nuestra Boda",
   },
@@ -52,6 +52,7 @@ export const weddingData = {
   },
 
   // ⏰ Timeline del evento
+  //itenerario ceremonia 6:00 p, bienvenida 7:30 pm, banquete 8:30, el ultimo sin horario ¡Prepárense para la fiesta
   timeline: [
     {
       id: "ceremonia",
@@ -61,17 +62,24 @@ export const weddingData = {
       color: "primary"
     },
     {
-      id: "cena",
-      name: "Cena",
-      time: "8:00",
+      id: "bienvenida",
+      name: "Bienvenida",
+      time: "7:30",
+      icon: "🎉", // Confeti - celebración
+      color: "secondary"
+    },
+    {
+      id: "banquete",
+      name: "Banquete",
+      time: "8:30",
       icon: "🍽️", // Plato con cubiertos - cena elegante
       color: "primary"
     },
     {
-      id: "brindis",
-      name: "Brindis",
-      time: "9:45",
-      icon: "🥂", // Copas de champagne - celebración y brindis
+      id: "fiesta",
+      name: "¡Prepárense para la fiesta!",
+      time: "--:--",
+      icon: "💃", // Copas de champagne - celebración y brindis
       color: "secondary"
     },
     
