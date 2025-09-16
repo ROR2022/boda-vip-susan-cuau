@@ -49,7 +49,7 @@ export default function TimelineSection() {
     <section
       ref={sectionRef}
       style={{
-         background: "url('/images/orquideas2.jpg')",
+         background: "url('/images/orquideas4.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',  
@@ -92,7 +92,7 @@ export default function TimelineSection() {
                   className={isVisible ? completeClass : basicClass}
                 >
                   <Image
-                    src="/images/susan&cuau3.jpg"
+                    src="/images/susan&cuau4.jpg"
                     alt="Timeline Section"
                     fill
                     className="object-cover"

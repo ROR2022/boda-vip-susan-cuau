@@ -95,7 +95,7 @@ export function PremiumGallery() {
   return (
     <section 
     style={{
-      background: "url('/images/orquideas2.jpg')",
+      background: "url('/images/orquideas4.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',  

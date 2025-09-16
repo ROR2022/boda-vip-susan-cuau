@@ -84,64 +84,58 @@ export const premiumDemoData = {
     description: "Una colección de fotos favoritas para este gran día",
     images: [
       { 
-        src: "/images/boda1.jpeg", 
+        src: "/images/susan&cuau1.jpg", 
         alt: "Sesión fotográfica 1", 
         caption: "Momentos Inolvidables",
         category: "preparacion"
       },
       { 
-        src: "/images/boda2.jpeg", 
+        src: "/images/susan&cuau2.jpg", 
         alt: "Sesión fotográfica 2", 
         caption: "Momentos Inolvidables",
         category: "vestido"
       },
       { 
-        src: "/images/boda3.jpeg", 
+        src: "/images/susan&cuau3.jpg", 
         alt: "Sesión fotográfica 3", 
         caption: "Momentos Inolvidables",
         category: "alegria"
       },
       { 
-        src: "/images/boda4.jpeg", 
+        src: "/images/susan&cuau4.jpg", 
         alt: "Sesión fotográfica 4", 
         caption: "Momentos Inolvidables",
         category: "celebracion"
       },
       { 
-        src: "/images/boda5.jpeg", 
+        src: "/images/susan&cuau5.jpg", 
         alt: "Sesión fotográfica 4", 
         caption: "Momentos Inolvidables",
         category: "celebracion"
       },
       { 
-        src: "/images/boda6.jpeg", 
+        src: "/images/susan&cuau6.jpg", 
         alt: "Sesión fotográfica 4", 
         caption: "Momentos Inolvidables",
         category: "celebracion"
       },
       { 
-        src: "/images/boda7.jpeg", 
+        src: "/images/susan&cuau7.jpg", 
         alt: "Sesión fotográfica 4", 
         caption: "Momentos Inolvidables",
         category: "celebracion"
       },
       { 
-        src: "/images/boda8.jpeg", 
+        src: "/images/susan&cuau8.jpg", 
         alt: "Sesión fotográfica 4", 
         caption: "Momentos Inolvidables",
         category: "celebracion"
       },
       { 
-        src: "/images/boda9.jpeg", 
+        src: "/images/susan&cuau9.jpg", 
         alt: "Sesión fotográfica 1", 
         caption: "Momentos Inolvidables",
         category: "preparacion"
-      },
-      { 
-        src: "/images/boda10.jpeg", 
-        alt: "Sesión fotográfica 2", 
-        caption: "Momentos Inolvidables",
-        category: "vestido"
       },
     ]
   },

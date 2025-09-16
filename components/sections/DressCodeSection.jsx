@@ -99,7 +99,7 @@ export default function DressCodeSection() {
       id="dresscode"
       className="py-20"
       style={{
-         background: "url('/images/orquideas2.jpg')",
+         background: "url('/images/orquideas4.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',  
@@ -160,7 +160,7 @@ export default function DressCodeSection() {
             Semi-Formal
           </h3>
           <Image
-            src="/images/dresscode1.jpg"
+            src="/images/dressCode1.jpg"
             alt="Código de Vestimenta"
             width={600}
             height={400}
@@ -169,32 +169,7 @@ export default function DressCodeSection() {
           <p className="text-xl text-foreground">Sugerencia de gama de color</p>
           <p className="text-sm text-muted-foreground">Se reserva el color blanco y negro</p>
 
-          <Card 
-          style={{ display: 'none'}}
-          className="max-w-md mx-auto bg-primary/10 border-primary/20">
-            <CardContent className="p-8 text-center space-y-4">
-              <h3 className="font-script text-3xl text-foreground">
-                Confirma tu asistencia
-              </h3>
-              <p className="text-muted-foreground">
-                {dressCode.confirmationMessage}
-              </p>
-              <Button
-                onClick={handleConfirmPapa}
-                className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-8 py-3 w-full"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Confirmar con Papá
-              </Button>
-              <Button
-                onClick={handleConfirmMama}
-                className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-8 py-3 w-full"
-              >
-                <Phone className="w-4 h-4 mr-2" />
-                Confirmar con Mamá
-              </Button>
-            </CardContent>
-          </Card>
+          
         </div>
       </div>
     </section>

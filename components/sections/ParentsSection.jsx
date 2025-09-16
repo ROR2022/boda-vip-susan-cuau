@@ -35,7 +35,7 @@ export default function ParentsSection() {
   return (
     <section 
     style={{
-      background: "url('/images/orquideas2.jpg')",
+      background: "url('/images/orquideas4.jpg')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundAttachment: "scroll",
@@ -71,21 +71,25 @@ export default function ParentsSection() {
                   </h3>
                   <div className="space-y-2">
                     <p className="text-xl font-medium">
-                      Adrian Fuentes Salinas
+                      Ma. Beatriz Márquez Zamora+
                     </p>
                     <p className="text-xl font-medium">
-                      Enedina Prado Duarte
+                      Juan Contreras Márquez
                     </p>
                   </div>
                 </div>
 
                <div>
-                  <h3 className="font-script text-3xl text-secondary mb-4">
+                  <h3 className={isVisible ? completeClass : basicClass}>
                     Papás del Novio
                   </h3>
                   <div className="space-y-2">
-                    <p className="text-xl font-medium">Marcelina Barajas Prado</p>
-                    <p className="text-xl font-medium">Gilberto Velázquez Avila</p>
+                    <p className="text-xl font-medium">
+                      Leticia Moreno Cruz
+                    </p>
+                    <p className="text-xl font-medium">
+                      Ramiro Trinidad Bautista
+                      </p>
                   </div>
                 </div>
               </div>
