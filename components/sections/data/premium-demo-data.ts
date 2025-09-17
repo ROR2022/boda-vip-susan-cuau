@@ -96,10 +96,10 @@ export const premiumDemoData = {
         category: "vestido"
       },
       { 
-        src: "/images/susan&cuau3.jpg", 
-        alt: "Sesión fotográfica 3", 
+        src: "/images/susan&cuau.jpg", 
+        alt: "Sesión fotográfica 2", 
         caption: "Momentos Inolvidables",
-        category: "alegria"
+        category: "vestido"
       },
       { 
         src: "/images/susan&cuau4.jpg", 

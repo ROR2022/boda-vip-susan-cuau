@@ -4,7 +4,7 @@ export const weddingData = {
   couple: {
     bride: "",
     groom: "",
-    initials: "S & C",
+    initials: "Susan & Cuau",
     quote: "",
     mainImage: "/images/noviosEditado1.png",
     sunsetImage: "/images/frida7.jpg"
