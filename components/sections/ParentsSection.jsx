@@ -74,7 +74,7 @@ export default function ParentsSection() {
                       Ma. Beatriz Márquez Zamora+
                     </p>
                     <p className="text-xl font-medium">
-                      Juan Contreras Márquez
+                      Juan F. Contreras Flores
                     </p>
                   </div>
                 </div>
