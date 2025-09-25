@@ -253,7 +253,7 @@ const DeleteConfirmationModal: React.FC<DeleteConfirmationModalProps> = ({
               color: VIP_COLORS.lavandaIntensa
             }}
           >
-            <strong>⚠️ Advertencia:</strong> Esta foto será eliminada permanentemente de la galería.
+            <strong>⚠️ Advertencia:</strong> Esta foto será eliminada permanentemente de la galería de la quinceañera.
           </div>
         </div>
 

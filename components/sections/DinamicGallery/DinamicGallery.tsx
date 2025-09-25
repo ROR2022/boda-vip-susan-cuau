@@ -2,12 +2,14 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Camera, Users, Calendar, RefreshCw, Filter, ChevronLeft, ChevronRight, Loader2, AlertCircle, Heart, Cloud, Server, Trash2, Image as ImageIcon, ArrowUp, Grid3X3, Play } from 'lucide-react';
+import { Camera, Users, Calendar, RefreshCw, Filter, ChevronLeft, ChevronRight, Loader2, AlertCircle, Heart, Cloud, Server, Trash2, Image as ImageIcon, ArrowUp, Grid3X3, Play, Maximize2, Settings } from 'lucide-react';
 import { useHybridGallery } from './hooks/useHybridGallery';
 import DeleteConfirmationModal from './DeleteConfirmationModal';
 import PhotoDetailModal from './PhotoDetailModal';
 import SimpleMusicPlayer from '../SimpleMusicPlayer';
 import PhotoCarouselView from './components/PhotoCarouselView';
+import TheaterModeModal from './components/TheaterModeModal';
+import GalleryControlsModal from './components/GalleryControlsModal';
 import Link from 'next/link';
 
 // Tipos importados del hook híbrido - usar la misma interfaz
@@ -33,31 +35,31 @@ interface HybridPhoto {
   isPublic: boolean;
 }
 
-// Paleta Aurora VIP Mejorada para Quinceañera - Mayor Contraste y Visibilidad
-/* const VIP_COLORS = {
-  rosaAurora: '#E91E63',      // Rosa principal - mayor contraste
-  lavandaAurora: '#9C27B0',   // Púrpura principal - más visible
-  oroAurora: '#FF9800',       // Naranja dorado - muy visible
+// Paleta Aurora VIP Mejorada para Boda - Mayor Contraste y Visibilidad
+const BODA_COLORS = {
+  rosaBoda: '#EF8479',      // Rosa principal - mayor contraste
+  lavandaBoda: '#9178A8',   // Lavanda principal - más visible
+  oroBoda: '#EABC8E',       // Oro dorado - muy visible
   blancoSeda: '#FFFFFF',      // Blanco puro - máximo contraste
-  cremaSuave: '#F5F5F5',      // Gris claro - mejor contraste
-  rosaIntensa: '#C2185B',     // Rosa intenso - excelente legibilidad
-  lavandaIntensa: '#7B1FA2',  // Púrpura intenso - alto contraste
-  oroIntensio: '#F57C00',     // Naranja intenso - muy legible
-  rosaDelicada: '#F8BBD9'     // Rosa suave pero visible
-}; */
-
-const VIP_COLORS = {
-  rosaAurora:     '#B58693', // mauve rosado desaturado
-  lavandaAurora:  '#A2A0B3', // lavanda grisácea
-  oroAurora:      '#CDB58A', // arena/ámbar suave
-  blancoSeda:     '#F6F6F4', // casi blanco neutro
-  cremaSuave:     '#EAE9E6', // gris cálido muy claro
-  rosaIntensa:    '#7E4A59', // ciruela rosado apagado (acentos)
-  lavandaIntensa: '#58536A', // púrpura pizarra (acentos)
-  oroIntensio:    '#8C6D3F', // bronce/ocre sobrio (acentos)
-  rosaDelicada:   '#D8C7CE'  // blush muy pálido y neutral
+  cremaSuave: '#F5F5F5',      // Crema claro - mejor contraste
+  rosaIntensa: '#E7776E',     // Rosa intenso - excelente legibilidad
+  lavandaIntensa: '#7F609A',  // Lavanda intenso - alto contraste
+  oroIntensio: '#DAA520',     // Oro intenso - muy legible
+  rosaDelicada: '#F4C9C0'     // Rosa suave pero visible
 };
 
+// Paleta Aurora VIP Mejorada para Quinceañera - Mayor Contraste y Visibilidad
+const VIP_COLORS = {
+  rosaAurora: '#EF8479',      // Rosa principal - mayor contraste
+  lavandaAurora: '#9178A8',   // Púrpura principal - más visible
+  oroAurora: '#EABC8E',       // Naranja dorado - muy visible
+  blancoSeda: '#FFFFFF',      // Blanco puro - máximo contraste
+  cremaSuave: '#F5F5F5',      // Gris claro - mejor contraste
+  rosaIntensa: '#E7776E',     // Rosa intenso - excelente legibilidad
+  lavandaIntensa: '#7F609A',  // Púrpura intenso - alto contraste
+  oroIntensio: '#DAA520',     // Naranja intenso - muy legible
+  rosaDelicada: '#F4C9C0'     // Rosa suave pero visible
+};
 
 /**
  * Componente para mostrar fotos subidas dinámicamente por los invitados a la quinceañera
@@ -84,6 +86,13 @@ const DinamicGallery: React.FC = () => {
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState<'grid' | 'carousel'>('grid');
   
+  // 🎭 Estados para modo teatro
+  const [isTheaterMode, setIsTheaterMode] = useState(false);
+  const [theaterInitialIndex, setTheaterInitialIndex] = useState(0);
+  
+  // ⚙️ Estado para modal de controles
+  const [showControlsModal, setShowControlsModal] = useState(false);
+  
   // 🗑️ Estados para eliminación
   const [photoToDelete, setPhotoToDelete] = useState<HybridPhoto | null>(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
@@ -98,15 +107,6 @@ const DinamicGallery: React.FC = () => {
       minute: '2-digit'
     });
   };
-
-  // Función para formatear tamaño de archivo
-  /* const formatFileSize = (bytes: number) => {
-    if (bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-  }; */
 
   // 🗑️ Handlers para eliminación
   const handleDeleteClick = (photo: HybridPhoto, e: React.MouseEvent) => {
@@ -134,6 +134,27 @@ const DinamicGallery: React.FC = () => {
       setShowDeleteModal(false);
       setPhotoToDelete(null);
       clearDeleteError();
+    }
+  };
+
+  // 🎭 Handlers para modo teatro
+  const handleOpenTheaterMode = (photoIndex = 0) => {
+    setTheaterInitialIndex(Math.max(0, photoIndex));
+    setIsTheaterMode(true);
+  };
+
+  const handleCloseTheaterMode = () => {
+    setIsTheaterMode(false);
+  };
+
+  const handlePhotoClick = (photo: HybridPhoto, e: React.MouseEvent) => {
+    // Si es double-click, abrir en modo teatro
+    if (e.detail === 2) {
+      const photoIndex = photos.findIndex((p: HybridPhoto) => p.id === photo.id);
+      handleOpenTheaterMode(photoIndex);
+    } else {
+      // Click simple: abrir modal normal
+      setSelectedPhoto(photo);
     }
   };
 
@@ -221,101 +242,26 @@ const DinamicGallery: React.FC = () => {
             Momentos Compartidos
           </h2>
           <SimpleMusicPlayer />
-          {/* {stats && (
-            <p 
-              className="text-xl mb-2 font-medium"
-              style={{ color: VIP_COLORS.rosaIntensa }}
-            >
-              {stats.totalPhotos} foto{stats.totalPhotos !== 1 ? 's' : ''} compartida{stats.totalPhotos !== 1 ? 's' : ''} por {stats.uploaders.length} invitado{stats.uploaders.length !== 1 ? 's' : ''}
-              <br />
-              <span className="text-sm opacity-75">
-                📁 {stats.sourceBreakdown.local} locales • ☁️ {stats.sourceBreakdown.cloudinary} en la nube
-              </span>
-            </p>
-          )} */}
+          
         </div>
 
-        {/* Controles y Filtros */}
-        <div className="mb-8 flex flex-col items-center justify-center gap-4">
-          {/* Toggle Vista Grid/Carrusel */}
-          <div className="flex items-center space-x-4">
-            <button
-              onClick={() => setViewMode('grid')}
-              className={`flex items-center px-4 py-2 rounded-lg border-2 transition-all duration-300 hover:scale-105 ${
-                viewMode === 'grid' ? 'shadow-lg' : ''
-              }`}
-              style={{
-                borderColor: VIP_COLORS.oroAurora,
-                color: viewMode === 'grid' ? 'white' : VIP_COLORS.rosaAurora,
-                backgroundColor: viewMode === 'grid' ? VIP_COLORS.rosaAurora : 'transparent'
-              }}
-            >
-              <Grid3X3 size={18} className="mr-2" />
-              Vista Grid
-            </button>
-            
-            <button
-              onClick={() => setViewMode('carousel')}
-              className={`flex items-center px-4 py-2 rounded-lg border-2 transition-all duration-300 hover:scale-105 ${
-                viewMode === 'carousel' ? 'shadow-lg' : ''
-              }`}
-              style={{
-                borderColor: VIP_COLORS.oroAurora,
-                color: viewMode === 'carousel' ? 'white' : VIP_COLORS.rosaAurora,
-                backgroundColor: viewMode === 'carousel' ? VIP_COLORS.rosaAurora : 'transparent'
-              }}
-            >
-              <Play size={18} className="mr-2" />
-              Vista Carrusel
-            </button>
-          </div>
-
-          {/* Controles existentes */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
-            {/* Botón Refresh */}
-            <button
-              onClick={refresh}
-              disabled={loading}
-              className="flex items-center px-4 py-2 rounded-lg border-2 transition-all duration-300 hover:scale-105"
-              style={{
-                borderColor: VIP_COLORS.oroAurora,
-                color: VIP_COLORS.rosaAurora,
-                backgroundColor: 'transparent'
-              }}
-            >
-              <RefreshCw size={18} className={`mr-2 ${loading ? 'animate-spin' : ''}`} />
-              Actualizar
-            </button>
-
-            <Link
-              href="/fotos"
-              className="flex items-center px-4 py-2 border-2 rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <Camera size={18} className="mr-2" />
-              Subir Foto
-            </Link>
-            <Link
-              href="/"
-              className="flex items-center px-4 py-2 border-2 rounded-lg transition-all duration-300 hover:scale-105"
-            >
-              <ImageIcon size={18} className="mr-2" />
-              Ver Invitación
-            </Link>
-
-            {/* Toggle Filtros */}
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center px-4 py-2 rounded-lg transition-all duration-300 hover:scale-105"
-              style={{
-                display: 'none',
-                background: `linear-gradient(135deg, ${VIP_COLORS.rosaAurora}, ${VIP_COLORS.rosaIntensa})`,
-                color: 'white'
-              }}
-            >
-              <Filter size={18} className="mr-2" />
-              Filtros
-            </button>
-          </div>
+        {/* Controles Simplificados */}
+        <div className="mb-8 flex justify-center">
+          <button
+            onClick={() => setShowControlsModal(true)}
+            className="flex items-center px-6 py-3 rounded-xl border-2 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            style={{
+              background: `linear-gradient(135deg, ${VIP_COLORS.rosaAurora}, ${VIP_COLORS.rosaIntensa})`,
+              borderColor: VIP_COLORS.oroAurora,
+              color: 'white'
+            }}
+          >
+            <Settings size={20} className="mr-3" />
+            <span className="font-medium">Controles de Galería</span>
+            <div className="ml-3 px-2 py-1 rounded-full bg-white/20 text-xs">
+              {photos.length} fotos
+            </div>
+          </button>
         </div>
 
         {/* Panel de Filtros */}
@@ -475,8 +421,9 @@ const DinamicGallery: React.FC = () => {
                   <div 
                     key={photo.id}
                     className="group relative rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105"
-                    onClick={() => setSelectedPhoto(photo)}
+                    onClick={(e) => handlePhotoClick(photo, e)}
                     style={{ aspectRatio: '1' }}
+                    title="Click para ver detalles, doble-click para Modo Teatro"
                   >
                     {/* Imagen usando URL híbrida */}
                     <Image
@@ -618,6 +565,27 @@ const DinamicGallery: React.FC = () => {
         onClose={handleCloseDeleteModal}
         onConfirm={handleConfirmDelete}
         isDeleting={photoToDelete ? isPhotoDeleting(photoToDelete.id) : false}
+      />
+
+      {/* 🎭 Modal de Modo Teatro */}
+      <TheaterModeModal
+        photos={photos}
+        initialIndex={theaterInitialIndex}
+        isOpen={isTheaterMode}
+        onClose={handleCloseTheaterMode}
+        getPhotoDisplayUrl={getPhotoDisplayUrl}
+      />
+
+      {/* ⚙️ Modal de Controles de Galería */}
+      <GalleryControlsModal
+        isOpen={showControlsModal}
+        onClose={() => setShowControlsModal(false)}
+        viewMode={viewMode}
+        onViewModeChange={setViewMode}
+        onOpenTheaterMode={() => handleOpenTheaterMode(0)}
+        onRefresh={refresh}
+        loading={loading}
+        photosCount={photos.length}
       />
     </section>
   );
