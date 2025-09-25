@@ -54,30 +54,30 @@ export const UI_CONFIG = {
   maxPreviewHeight: 200, // px
 };
 
-// Paleta Aurora VIP para Boda - Temática elegante y romántica
-const BODA_COLORS = {
-  rosaBoda: '#FFC0CB',        // Rosa suave principal (blush pink)
-  lavandaBoda: '#E6E6FA',     // Lavanda suave principal
-  oroBoda: '#D4AF37',         // Oro elegante
-  blancoSeda: '#FFFFFF',      // Blanco puro
-  cremaSuave: '#F5F5F5',      // Gris claro o crema
-  rosaIntensa: '#DB7093',     // Rosa intenso moderado
-  lavandaIntensa: '#9370DB',  // Lavanda intensa moderada
-  oroIntenso: '#CDAF95',      // Oro intenso (champagne)
-  rosaDelicada: '#FFE4E1'     // Rosa delicada (misty rose)
+const BODA_COLORS2 = {
+  rosaBoda: '#D85251',        // Rojo suave otoñal (inspirado en hojas de otoño)
+  lavandaBoda: '#7B5C6E',     // Morado vino suave
+  oroBoda: '#D49A6A',         // Oro cálido con toque café
+  blancoSeda: '#FFFFFF',      // Blanco puro (mantenido)
+  cremaSuave: '#F2E1C3',      // Crema cálida otoñal
+  rosaIntensa: '#8D0327',     // Vino intenso
+  lavandaIntensa: '#822D5C',  // Vino púrpura intenso
+  oroIntenso: '#A66F2E',      // Café dorado intenso
+  rosaDelicada: '#E69779'     // Rojo delicado otoñal (como terracota suave)
 };
+
 
 // Paleta de colores Aurora Pastel para Quinceañera VIP
 export const VIP_COLORS = {
-  rosaAurora: '#FFC0CB',
-  lavandaAurora: '#E6E6FA',
-  oroAurora: '#D4AF37',
+  rosaAurora: '#D85251',
+  lavandaAurora: '#7B5C6E',
+  oroAurora: '#D49A6A',
   blancoSeda: '#FFFFFF',
-  cremaSuave: '#F5F5F5',
-  rosaIntensa: '#DB7093',
-  lavandaIntensa: '#9370DB',
-  oroIntensio: '#CDAF95',
-  rosaDelicada: '#FFE4E1'
+  cremaSuave: '#F2E1C3',
+  rosaIntensa: '#8D0327',
+  lavandaIntensa: '#822D5C',
+  oroIntensio: '#A66F2E',
+  rosaDelicada: '#E69779'
 };
 
 // Configuración del endpoint

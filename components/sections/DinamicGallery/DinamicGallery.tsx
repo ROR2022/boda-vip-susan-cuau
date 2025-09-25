@@ -37,28 +37,28 @@ interface HybridPhoto {
 
 // Paleta Aurora VIP Mejorada para Boda - Mayor Contraste y Visibilidad
 const BODA_COLORS = {
-  rosaBoda: '#EF8479',      // Rosa principal - mayor contraste
-  lavandaBoda: '#9178A8',   // Lavanda principal - más visible
-  oroBoda: '#EABC8E',       // Oro dorado - muy visible
-  blancoSeda: '#FFFFFF',      // Blanco puro - máximo contraste
-  cremaSuave: '#F5F5F5',      // Crema claro - mejor contraste
-  rosaIntensa: '#E7776E',     // Rosa intenso - excelente legibilidad
-  lavandaIntensa: '#7F609A',  // Lavanda intenso - alto contraste
-  oroIntensio: '#DAA520',     // Oro intenso - muy legible
-  rosaDelicada: '#F4C9C0'     // Rosa suave pero visible
+   rosaBoda: '#D85251',        // Rojo suave otoñal (inspirado en hojas de otoño)
+  lavandaBoda: '#7B5C6E',     // Morado vino suave
+  oroBoda: '#D49A6A',         // Oro cálido con toque café
+  blancoSeda: '#FFFFFF',      // Blanco puro (mantenido)
+  cremaSuave: '#F2E1C3',      // Crema cálida otoñal
+  rosaIntensa: '#8D0327',     // Vino intenso
+  lavandaIntensa: '#822D5C',  // Vino púrpura intenso
+  oroIntenso: '#A66F2E',      // Café dorado intenso
+  rosaDelicada: '#E69779'     // Rojo delicado otoñal (como terracota suave)
 };
 
 // Paleta Aurora VIP Mejorada para Quinceañera - Mayor Contraste y Visibilidad
 const VIP_COLORS = {
-  rosaAurora: '#EF8479',      // Rosa principal - mayor contraste
-  lavandaAurora: '#9178A8',   // Púrpura principal - más visible
-  oroAurora: '#EABC8E',       // Naranja dorado - muy visible
+  rosaAurora: '#D85251',      // Rosa principal - mayor contraste
+  lavandaAurora: '#7B5C6E',   // Púrpura principal - más visible
+  oroAurora: '#DA9A6A',       // Naranja dorado - muy visible
   blancoSeda: '#FFFFFF',      // Blanco puro - máximo contraste
-  cremaSuave: '#F5F5F5',      // Gris claro - mejor contraste
-  rosaIntensa: '#E7776E',     // Rosa intenso - excelente legibilidad
-  lavandaIntensa: '#7F609A',  // Púrpura intenso - alto contraste
-  oroIntensio: '#DAA520',     // Naranja intenso - muy legible
-  rosaDelicada: '#F4C9C0'     // Rosa suave pero visible
+  cremaSuave: '#F2E1C3',      // Gris claro - mejor contraste
+  rosaIntensa: '#8D0327',     // Rosa intenso - excelente legibilidad
+  lavandaIntensa: '#822D5C',  // Púrpura intenso - alto contraste
+  oroIntensio: '#A66F2E',     // Naranja intenso - muy legible
+  rosaDelicada: '#E69779'     // Rosa suave pero visible
 };
 
 /**
