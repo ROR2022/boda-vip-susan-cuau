@@ -11,6 +11,7 @@ import PhotoCarouselView from './components/PhotoCarouselView';
 import TheaterModeModal from './components/TheaterModeModal';
 import GalleryControlsModal from './components/GalleryControlsModal';
 import Link from 'next/link';
+import { VIP_COLORS } from '../data/colors';
 
 // Tipos importados del hook híbrido - usar la misma interfaz
 interface HybridPhoto {
@@ -35,31 +36,18 @@ interface HybridPhoto {
   isPublic: boolean;
 }
 
-// Paleta Aurora VIP Mejorada para Boda - Mayor Contraste y Visibilidad
-const BODA_COLORS = {
-   rosaBoda: '#D85251',        // Rojo suave otoñal (inspirado en hojas de otoño)
-  lavandaBoda: '#7B5C6E',     // Morado vino suave
-  oroBoda: '#D49A6A',         // Oro cálido con toque café
-  blancoSeda: '#FFFFFF',      // Blanco puro (mantenido)
-  cremaSuave: '#F2E1C3',      // Crema cálida otoñal
-  rosaIntensa: '#8D0327',     // Vino intenso
-  lavandaIntensa: '#822D5C',  // Vino púrpura intenso
-  oroIntenso: '#A66F2E',      // Café dorado intenso
-  rosaDelicada: '#E69779'     // Rojo delicado otoñal (como terracota suave)
-};
-
 // Paleta Aurora VIP Mejorada para Quinceañera - Mayor Contraste y Visibilidad
-const VIP_COLORS = {
-  rosaAurora: '#D85251',      // Rosa principal - mayor contraste
-  lavandaAurora: '#7B5C6E',   // Púrpura principal - más visible
-  oroAurora: '#DA9A6A',       // Naranja dorado - muy visible
+/* const VIP_COLORS = {
+  rosaAurora: '#E91E63',      // Rosa principal - mayor contraste
+  lavandaAurora: '#9C27B0',   // Púrpura principal - más visible
+  oroAurora: '#FF9800',       // Naranja dorado - muy visible
   blancoSeda: '#FFFFFF',      // Blanco puro - máximo contraste
-  cremaSuave: '#F2E1C3',      // Gris claro - mejor contraste
-  rosaIntensa: '#8D0327',     // Rosa intenso - excelente legibilidad
-  lavandaIntensa: '#822D5C',  // Púrpura intenso - alto contraste
-  oroIntensio: '#A66F2E',     // Naranja intenso - muy legible
-  rosaDelicada: '#E69779'     // Rosa suave pero visible
-};
+  cremaSuave: '#F5F5F5',      // Gris claro - mejor contraste
+  rosaIntensa: '#C2185B',     // Rosa intenso - excelente legibilidad
+  lavandaIntensa: '#7B1FA2',  // Púrpura intenso - alto contraste
+  oroIntensio: '#F57C00',     // Naranja intenso - muy legible
+  rosaDelicada: '#F8BBD9'     // Rosa suave pero visible
+}; */
 
 /**
  * Componente para mostrar fotos subidas dinámicamente por los invitados a la quinceañera

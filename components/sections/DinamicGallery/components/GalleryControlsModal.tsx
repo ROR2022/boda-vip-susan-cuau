@@ -3,19 +3,20 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { X, Grid3X3, Play, Maximize2, RefreshCw, Upload, Settings } from 'lucide-react';
+import { VIP_COLORS } from '../../data/colors';
 
 // Paleta Aurora VIP - colores heredados del componente principal
-const VIP_COLORS = {
-   rosaAurora: '#D85251',      // Rosa principal - mayor contraste
-  lavandaAurora: '#7B5C6E',   // Púrpura principal - más visible
-  oroAurora: '#DA9A6A',       // Naranja dorado - muy visible
-  blancoSeda: '#FFFFFF',      // Blanco puro - máximo contraste
-  cremaSuave: '#F2E1C3',      // Gris claro - mejor contraste
-  rosaIntensa: '#8D0327',     // Rosa intenso - excelente legibilidad
-  lavandaIntensa: '#822D5C',  // Púrpura intenso - alto contraste
-  oroIntensio: '#A66F2E',     // Naranja intenso - muy legible
-  rosaDelicada: '#E69779'    
-};
+/* const VIP_COLORS = {
+  rosaAurora: '#E91E63',
+  lavandaAurora: '#9C27B0',
+  oroAurora: '#FF9800',
+  blancoSeda: '#FFFFFF',
+  cremaSuave: '#F5F5F5',
+  rosaIntensa: '#C2185B',
+  lavandaIntensa: '#7B1FA2',
+  oroIntensio: '#F57C00',
+  rosaDelicada: '#F8BBD9'
+}; */
 
 interface GalleryControlsModalProps {
   isOpen: boolean;

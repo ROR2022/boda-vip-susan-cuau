@@ -54,32 +54,19 @@ export const UI_CONFIG = {
   maxPreviewHeight: 200, // px
 };
 
-const BODA_COLORS2 = {
-  rosaBoda: '#D85251',        // Rojo suave otoñal (inspirado en hojas de otoño)
-  lavandaBoda: '#7B5C6E',     // Morado vino suave
-  oroBoda: '#D49A6A',         // Oro cálido con toque café
-  blancoSeda: '#FFFFFF',      // Blanco puro (mantenido)
-  cremaSuave: '#F2E1C3',      // Crema cálida otoñal
-  rosaIntensa: '#8D0327',     // Vino intenso
-  lavandaIntensa: '#822D5C',  // Vino púrpura intenso
-  oroIntenso: '#A66F2E',      // Café dorado intenso
-  rosaDelicada: '#E69779'     // Rojo delicado otoñal (como terracota suave)
-};
-
-
 // Paleta de colores Aurora Pastel para Quinceañera VIP
-export const VIP_COLORS = {
-  rosaAurora: '#D85251',
-  lavandaAurora: '#7B5C6E',
-  oroAurora: '#D49A6A',
-  blancoSeda: '#FFFFFF',
-  cremaSuave: '#F2E1C3',
-  rosaIntensa: '#8D0327',
-  lavandaIntensa: '#822D5C',
-  oroIntensio: '#A66F2E',
-  rosaDelicada: '#E69779'
+/* export const VIP_COLORS = {
+  rosaAurora: '#FFB3D9',
+  lavandaAurora: '#E6D9FF',
+  oroAurora: '#FFF2CC',
+  blancoSeda: '#FDFCFC',
+  cremaSuave: '#FAF8F5',
+  rosaIntensa: '#FF8FD1',
+  lavandaIntensa: '#D9CAFF',
+  oroIntensio: '#FFEC99',
+  rosaDelicada: '#FFCCE6'
 };
-
+ */
 // Configuración del endpoint
 export const API_CONFIG = {
   uploadEndpoint: '/api/upload-fotos-simple', // Temporary simple endpoint for testing

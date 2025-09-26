@@ -31,6 +31,8 @@ interface CreateQRProps {
   urlLink: string;
 }
 
+//https://quince-premium-frida.vercel.app/invitados/68b22163c8fce5afcf5fd7ce
+//https://quince-premium-frida.vercel.app/invitados/68b22163c8fce5afcf5fd7ce
 
 // 🎯 Componente CreateQR - Generador de códigos QR personalizados
 const CreateQR: React.FC<CreateQRProps> = ({urlLink}) => {

@@ -18,7 +18,8 @@ import {
   Pause,
   Play,
 } from "lucide-react";
-import { VIP_COLORS, UI_CONFIG } from "./constants/upload.constants";
+import { UI_CONFIG } from "./constants/upload.constants";
+import { VIP_COLORS } from "../data/colors";
 import { UploaderFormData } from "./types/upload.types";
 import { useHybridUpload } from "./hooks/useHybridUpload";
 
