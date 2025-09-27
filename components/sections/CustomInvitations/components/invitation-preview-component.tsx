@@ -5,6 +5,7 @@
 import React, { forwardRef } from 'react';
 import { InvitationPreviewProps } from '../types/invitation.types';
 import { EVENT_INFO } from '../constants/invitation.constants';
+import { VIP_COLORS } from '@/components/sections/data/colors';
 
 /**
  * Componente de vista previa de la invitación
@@ -14,7 +15,11 @@ export const InvitationPreview = forwardRef<HTMLDivElement, InvitationPreviewPro
     return (
       <div 
         ref={ref}
-        className="mt-8 p-6 bg-gradient-to-br from-purple-600 via-fuchsia-500 to-purple-700 rounded-2xl text-white shadow-2xl relative overflow-hidden"
+        className="mt-8 p-6 rounded-2xl shadow-2xl relative overflow-hidden"
+        style={{
+          background: `linear-gradient(to bottom right, ${VIP_COLORS.lavandaAurora}, ${VIP_COLORS.rosaAurora}, ${VIP_COLORS.lavandaIntensa})`,
+          color: VIP_COLORS.blancoSeda
+        }}
       >
         {/* Decoraciones aurora */}
         <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -25,10 +30,23 @@ export const InvitationPreview = forwardRef<HTMLDivElement, InvitationPreviewPro
         </div>
         
         <div className="relative z-10 text-center">
-          <h2 className="text-2xl font-bold mb-4 text-yellow-200">✨ Quinceañera Frida ✨</h2>
+          <h2 
+            className="text-2xl font-bold mb-4" 
+            style={{ color: VIP_COLORS.oroAurora }}
+          >
+            ✨ Nuestra Boda Susan & Cuau ✨
+          </h2>
           <div className="space-y-3 text-lg">
             <p><strong>Invitado especial:</strong> {formData.guestName}</p>
-            <p className="italic bg-white/20 p-3 rounded-lg">&quot;{formData.personalMessage}&quot;</p>
+            <p 
+              className="italic p-3 rounded-lg"
+              style={{ 
+                backgroundColor: `${VIP_COLORS.blancoSeda}33`,
+                color: VIP_COLORS.cremaSuave 
+              }}
+            >
+              &quot;{formData.personalMessage}&quot;
+            </p>
             <div className="space-y-1 text-sm">
               <p>📅 <strong>Fecha:</strong> {EVENT_INFO.date}</p>
               <p>🕖 <strong>Hora:</strong> {EVENT_INFO.time}</p>
@@ -36,8 +54,14 @@ export const InvitationPreview = forwardRef<HTMLDivElement, InvitationPreviewPro
               <p>👥 <strong>Invitados:</strong> {formData.numberOfGuests} {parseInt(formData.numberOfGuests) === 1 ? 'persona' : 'personas'}</p>
             </div>
           </div>
-          <div className="mt-4 p-3 bg-white/20 rounded-lg">
-            <p className="text-sm">💜 Con cariño, Frida</p>
+          <div 
+            className="mt-4 p-3 rounded-lg"
+            style={{ 
+              backgroundColor: `${VIP_COLORS.oroAurora}33`,
+              color: VIP_COLORS.blancoSeda 
+            }}
+          >
+            <p className="text-sm">💜 Con cariño, Susan & Cuau</p>
           </div>
         </div>
       </div>
