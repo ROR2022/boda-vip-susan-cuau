@@ -12,6 +12,7 @@ import { InvitationForm } from "./invitation-form-component";
 import { ActionButtons } from "./action-buttons-component";
 import { InvitationPreview } from "./invitation-preview-component";
 import { EVENT_INFO } from "../constants/invitation.constants";
+import { createOrUpdateGuestFromInvitation } from '../utils/invitation.utils';
 
 
 const CustomInvitations: React.FC = () => {
@@ -39,6 +40,18 @@ const CustomInvitations: React.FC = () => {
     }
 
     if (!invitationRef.current) return;
+
+    // 1. Registrar invitado en la base de datos (obligatorio ahora)
+    console.log('📤 [MAIN] Intentando registrar invitado en BD...');
+    const dbResult = await createOrUpdateGuestFromInvitation(formData);
+    
+    if (dbResult) {
+      console.log('✅ [MAIN] Invitado registrado en BD exitosamente');
+    } else {
+      console.error('❌ [MAIN] Error al registrar invitado en BD. Abortando descarga.');
+      updateUIState({ downloadError: "Error al registrar invitado en la base de datos. Intenta nuevamente." });
+      return;
+    }
 
     await DownloadService.downloadInvitation(
       invitationRef.current,

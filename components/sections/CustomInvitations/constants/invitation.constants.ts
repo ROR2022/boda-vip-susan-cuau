@@ -65,7 +65,7 @@ export const DOWNLOAD_CONFIG = {
   QUALITY: 0.95,
   MIN_WIDTH: 600,
   MIN_HEIGHT: 800,
-  FILE_PREFIX: "invitacion_aurora_"
+  FILE_PREFIX: "invitacion_"
 } as const;
 
 export const CSS_CLASSES = {
