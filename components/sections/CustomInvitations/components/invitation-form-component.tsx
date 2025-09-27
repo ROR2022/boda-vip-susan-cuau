@@ -92,7 +92,7 @@ export const InvitationForm: React.FC<InvitationFormProps> = ({
             htmlFor="guestRelation"
             className="block text-sm font-medium text-purple-700 mb-2"
           >
-            Relación con la quinceañera
+            Relación
           </label>
           <select
             id="guestRelation"
