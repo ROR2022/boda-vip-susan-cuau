@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { QrCode, Camera, Heart, Sparkles } from 'lucide-react'
 import QRDownloadContainer from './QRDownloadContainer'
-import { VIP_COLORS } from '../data/colors';
+import { VIP_COLORS } from '@/components/sections/data/colors';
 
 // Paleta Aurora VIP para Quinceañera - Temática consistente
 /* const VIP_COLORS = {
@@ -70,7 +70,7 @@ const QRCode = () => {
           </div>
           
           <h1 
-            className="text-5xl font-bold mb-4 tracking-wide flex flex-col"
+            className="text-5xl font-bold mb-4 tracking-wide flex flex-col items-center"
             style={{ 
               color: VIP_COLORS.rosaAurora,
               textShadow: `2px 2px 4px rgba(233, 30, 99, 0.3)`,
@@ -80,13 +80,12 @@ const QRCode = () => {
             <span>SUSAN</span>
             <span>&</span>
             <span>CUAU</span>
-            
           </h1>
 
           <div className='mb-6'>
             <Image
               src="/images/susan&cuau1.jpg"
-              alt="Frida"
+              alt="susan&cuau"
               width={200}
               height={150}
               className="mx-auto rounded-lg"

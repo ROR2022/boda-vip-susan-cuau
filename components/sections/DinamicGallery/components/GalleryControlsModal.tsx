@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { X, Grid3X3, Play, Maximize2, RefreshCw, Upload, Settings } from 'lucide-react';
-import { VIP_COLORS } from '../../data/colors';
+import { VIP_COLORS } from '@/components/sections/data/colors';
 
 // Paleta Aurora VIP - colores heredados del componente principal
 /* const VIP_COLORS = {

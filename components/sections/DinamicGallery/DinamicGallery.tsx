@@ -11,7 +11,7 @@ import PhotoCarouselView from './components/PhotoCarouselView';
 import TheaterModeModal from './components/TheaterModeModal';
 import GalleryControlsModal from './components/GalleryControlsModal';
 import Link from 'next/link';
-import { VIP_COLORS } from '../data/colors';
+import { VIP_COLORS } from '@/components/sections/data/colors';
 
 // Tipos importados del hook híbrido - usar la misma interfaz
 interface HybridPhoto {

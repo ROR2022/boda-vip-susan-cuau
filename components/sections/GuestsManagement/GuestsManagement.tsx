@@ -12,6 +12,7 @@ import GuestsTable from './components/GuestsTable';
 import AddGuestForm from './components/AddGuestForm';
 import EditGuestForm from './components/EditGuestForm';
 import DeleteConfirmation from './components/DeleteConfirmation';
+//import { VIP_COLORS } from '@/components/sections/data/colors';
 
 /**
  * Componente para gestionar los invitados

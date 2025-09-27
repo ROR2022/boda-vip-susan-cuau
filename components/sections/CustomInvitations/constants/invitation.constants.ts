@@ -8,17 +8,17 @@ export const ADMIN_PASSWORD = "aurora1234";
 
 export const EVENT_INFO: EventInfo = {
   quinceaneraName: "Susan & Cuau",
-  date: "Sábado 20 de Diciembre 2025",
+  date: "Viernes 07 de Noviembre 2025",
   time: "6:00 PM",
-  venue: "Eventos Casablanca",
-  dressCode: "Formal -Blanco solo la novia-",
+  venue: "Capilla Inmaculado Corazón de María",
+  dressCode: "Formal - Se reserva el blanco y negro -",
   invitationUrl: "https://boda-vip-susan-cuau.vercel.app/"
 } as const;
 
 export const SUGGESTED_MESSAGES = [
-  "¡Querida amiga! Te invito a celebrar conmigo el día más mágico de mi vida. ¡Espero verte brillar junto a mí!",
-  "¡Familia querida! Este día especial no sería lo mismo sin ustedes. ¡Los espero con mucho amor!",
-  "¡Hola! Me encantaría que seas parte de mi celebración de XV años. ¡Será una noche inolvidable!",
+  "¡Querida amiga! Te invito a celebrar conmigo el día más mágico de nuestra vida. ¡Espero verte brillar junto a nosotros!",
+  "¡Familia querida! Este día especial no sería lo mismo sin ustedes. ¡Los esperamos con mucho amor!",
+  "¡Hola! Me encantaría que seas parte de mi celebración. ¡Será una noche inolvidable!",
   "¡Queridos padrinos! Su presencia es fundamental en este momento tan especial. ¡Los espero con cariño!",
   "¡Amigos del alma! Vengan a celebrar conmigo esta nueva etapa. ¡Será una fiesta increíble!"
 ] as const;

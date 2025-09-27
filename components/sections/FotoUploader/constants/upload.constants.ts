@@ -65,8 +65,8 @@ export const UI_CONFIG = {
   lavandaIntensa: '#D9CAFF',
   oroIntensio: '#FFEC99',
   rosaDelicada: '#FFCCE6'
-};
- */
+}; */
+
 // Configuración del endpoint
 export const API_CONFIG = {
   uploadEndpoint: '/api/upload-fotos-simple', // Temporary simple endpoint for testing

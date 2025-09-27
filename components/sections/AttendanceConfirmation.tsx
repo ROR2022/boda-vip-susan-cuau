@@ -22,7 +22,7 @@ const AttendanceConfirmation = () => {
   const [showSuccess, setShowSuccess] = useState(false);
 
   // Número de WhatsApp de destino
-  const whatsappNumber = "5217777937484"; // +52 1 777 937 484
+  const whatsappNumber = "5214371029609"; // +52 1 437 102 9609
 
   const handleInputChange = (
     e: React.ChangeEvent<

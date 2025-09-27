@@ -19,9 +19,9 @@ import {
   Play,
 } from "lucide-react";
 import { UI_CONFIG } from "./constants/upload.constants";
-import { VIP_COLORS } from "../data/colors";
 import { UploaderFormData } from "./types/upload.types";
 import { useHybridUpload } from "./hooks/useHybridUpload";
+import { VIP_COLORS } from '@/components/sections/data/colors';
 
 // 🔌 Activar interceptor de logs para envío automático al servidor
 import '@/utils/logInterceptor';
