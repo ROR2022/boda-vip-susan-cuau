@@ -16,8 +16,8 @@ import { VIP_COLORS } from '@/components/sections/data/colors';
   lavandaIntensa: '#7B1FA2',
   oroIntensio: '#F57C00',
   rosaDelicada: '#F8BBD9'
-}; */
-
+};
+ */
 interface GalleryControlsModalProps {
   isOpen: boolean;
   onClose: () => void;

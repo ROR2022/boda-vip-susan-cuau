@@ -4,7 +4,7 @@ import { UploadConfig } from '../types/upload.types';
 
 // Configuración principal del upload
 export const UPLOAD_CONFIG: UploadConfig = {
-  maxFileSize: 10 * 1024 * 1024, // 10MB
+  maxFileSize: 4.5 * 1024 * 1024, // 4.5MB - Límite unificado
   maxFiles: 10,
   allowedFormats: ['image/jpeg', 'image/png', 'image/webp'],
   compressionOptions: {
@@ -55,17 +55,17 @@ export const UI_CONFIG = {
 };
 
 // Paleta de colores Aurora Pastel para Quinceañera VIP
-/* export const VIP_COLORS = {
-  rosaAurora: '#FFB3D9',
-  lavandaAurora: '#E6D9FF',
-  oroAurora: '#FFF2CC',
-  blancoSeda: '#FDFCFC',
-  cremaSuave: '#FAF8F5',
-  rosaIntensa: '#FF8FD1',
-  lavandaIntensa: '#D9CAFF',
-  oroIntensio: '#FFEC99',
-  rosaDelicada: '#FFCCE6'
-}; */
+export const VIP_COLORS = {
+  rosaAurora: '#D85251',      
+  lavandaAurora: '#7B5C6E',   
+  oroAurora: '#DA9A6A',       
+  blancoSeda: '#FFFFFF',      
+  cremaSuave: '#F2E1C3',      
+  rosaIntensa: '#8D0327',     
+  lavandaIntensa: '#822D5C',  
+  oroIntensio: '#A66F2E',     
+  rosaDelicada: '#E69779'    
+};
 
 // Configuración del endpoint
 export const API_CONFIG = {
