@@ -7,6 +7,12 @@ export default async function CreateQRPage({ params }: { params: { id: string } 
   console.log('ID del param:', id);
   const baseUrl = process.env.BASE_URL || 'http://localhost:3000/';
   const urlLink = `${baseUrl}invitados/${id || ''}`;
+  //obtener los datos del invitado con el id
+  const guestDataResponse = await fetch(`${baseUrl}api/guests/${id}`);
+  //console.log('guestDataResponse:', guestDataResponse);
+  const guestData = await guestDataResponse.json();
+  console.log('guestData:', guestData.data);
+  const {name} = guestData.data || {name: 'Invitado'};
 
   return (
     <main style={{
@@ -17,7 +23,7 @@ export default async function CreateQRPage({ params }: { params: { id: string } 
       <div>
         <Link href="/invitados" className="text-blue-600 underline mb-4 inline-block">← Volver a Lista de Invitados</Link>
       </div>
-      <CreateQR urlLink={urlLink} />
+      <CreateQR urlLink={urlLink} name={name}/>
     </main>
   );
 }
